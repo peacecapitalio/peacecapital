@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url><loc>https://peacecapital.io/</loc></url>
+
   <url><loc>https://peacecapital.io/hoyao/</loc></url>
 
   <url><loc>https://peacecapital.io/hoyao/zh/</loc></url>
@@ -10,4 +13,10 @@
   <url><loc>https://peacecapital.io/hoyao/zh/contact.html</loc></url>
 
   <url><loc>https://peacecapital.io/hoyao/en/</loc></url>
+  <url><loc>https://peacecapital.io/hoyao/en/about.html</loc></url>
+  <url><loc>https://peacecapital.io/hoyao/en/technology.html</loc></url>
+  <url><loc>https://peacecapital.io/hoyao/en/applications.html</loc></url>
+  <url><loc>https://peacecapital.io/hoyao/en/sustainability.html</loc></url>
+  <url><loc>https://peacecapital.io/hoyao/en/contact.html</loc></url>
+
 </urlset>
