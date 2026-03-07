@@ -10,10 +10,10 @@
   <meta property="og:description" content="An independent capital platform based in Taiwan, founded by Chia-Ho Tang（唐加和）." />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://peacecapital.io/" />
+
   <style>
     :root{
       --bg:#071019;
-      --bg2:#0c1724;
       --card:#0f1b2b;
       --line:#1e2a3b;
       --text:#edf3f8;
@@ -22,47 +22,110 @@
       --accent2:#d2b56d;
       --radius:22px;
     }
+
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
+
     body{
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
       color:var(--text);
       background:
         radial-gradient(1200px 500px at 10% 0%, rgba(127,208,178,.10), transparent 60%),
         radial-gradient(1000px 480px at 90% 10%, rgba(210,181,109,.10), transparent 60%),
-        linear-gradient(180deg, var(--bg), #050b12 100%);
-      line-height:1.65;
+        linear-gradient(180deg, #071019, #050b12 100%);
+      line-height:1.68;
     }
+
     a{text-decoration:none;color:inherit}
-    .wrap{max-width:1180px;margin:0 auto;padding:28px 20px 80px}
+
+    .wrap{
+      max-width:1180px;
+      margin:0 auto;
+      padding:28px 20px 80px;
+    }
+
     .nav{
-      display:flex;justify-content:space-between;align-items:center;gap:16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
       padding:16px 20px;
       border:1px solid var(--line);
       border-radius:999px;
       background:rgba(10,17,28,.7);
-      backdrop-filter: blur(10px);
+      backdrop-filter:blur(10px);
     }
-    .brand-title{font-size:28px;font-weight:800;letter-spacing:-.5px}
-    .brand-sub{font-size:13px;color:var(--muted)}
-    .nav-links{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-    .nav-links a{font-size:14px;color:var(--muted)}
-    .hero{padding:72px 4px 36px}
-    .eyebrow{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.4px}
+
+    .brand-title{
+      font-size:28px;
+      font-weight:800;
+      letter-spacing:-.5px;
+    }
+
+    .brand-sub{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .nav-links{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .hero{
+      padding:72px 4px 36px;
+    }
+
+    .eyebrow{
+      font-size:13px;
+      font-weight:700;
+      color:var(--accent);
+      letter-spacing:.4px;
+    }
+
     h1{
-      margin:14px 0 18px;
+      margin:14px 0 12px;
       font-size:64px;
       line-height:1.02;
       letter-spacing:-1.8px;
     }
+
+    .hero-sub{
+      font-size:18px;
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
     .lead{
       max-width:860px;
       font-size:21px;
       color:var(--muted);
     }
-    .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+
+    .founder-line{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .cta{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:26px;
+    }
+
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       padding:14px 20px;
       border-radius:14px;
       border:1px solid var(--line);
@@ -70,11 +133,16 @@
       color:var(--text);
       font-weight:600;
     }
+
     .btn.primary{
       background:linear-gradient(135deg, rgba(127,208,178,.16), rgba(210,181,109,.12));
       border-color:rgba(127,208,178,.25);
     }
-    .section{margin-top:36px}
+
+    .section{
+      margin-top:36px;
+    }
+
     .section-title{
       font-size:14px;
       font-weight:700;
@@ -83,11 +151,13 @@
       text-transform:uppercase;
       margin-bottom:14px;
     }
+
     .grid{
       display:grid;
       grid-template-columns:repeat(12,1fr);
       gap:16px;
     }
+
     .card{
       grid-column:span 6;
       padding:22px;
@@ -95,22 +165,26 @@
       border-radius:var(--radius);
       background:rgba(15,27,43,.62);
     }
+
     .card h3{
       margin:0 0 8px;
       font-size:24px;
       letter-spacing:-.3px;
     }
+
     .card p{
       margin:0;
       color:var(--muted);
       font-size:15px;
     }
+
     .mini-links{
       margin-top:16px;
       display:flex;
       gap:10px;
       flex-wrap:wrap;
     }
+
     .pill{
       display:inline-flex;
       padding:8px 12px;
@@ -119,6 +193,7 @@
       color:var(--muted);
       font-size:13px;
     }
+
     .footer{
       margin-top:60px;
       padding-top:18px;
@@ -130,14 +205,24 @@
       gap:14px;
       flex-wrap:wrap;
     }
+
+    .footer a{
+      color:var(--muted);
+    }
+
     @media (max-width:900px){
       h1{font-size:44px}
       .lead{font-size:18px}
       .card{grid-column:span 12}
-      .nav{border-radius:24px;align-items:flex-start;flex-direction:column}
+      .nav{
+        border-radius:24px;
+        align-items:flex-start;
+        flex-direction:column;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <div class="nav">
@@ -147,20 +232,24 @@
       </div>
       <div class="nav-links">
         <a href="/hoyao/">HOYAO</a>
-        <a href="/#platform">Platform</a>
         <a href="/#founder">Founder</a>
+        <a href="/#platform">Platform</a>
       </div>
     </div>
 
     <div class="hero">
-      <div class="eyebrow">INDEPENDENT CAPITAL PLATFORM</div>
+      <div class="eyebrow">CAPITAL PLATFORM</div>
       <h1>Peace Capital</h1>
+      <div class="hero-sub">和平資本</div>
       <div class="lead">
-        Peace Capital（和平資本）is an independent capital platform based in Taiwan,
-        built around long-term partnerships, industry research, and strategic development.
+        Peace Capital is an independent platform based in Taiwan, built around
+        long-term partnerships, industry research, and strategic development.
+      </div>
+      <div class="founder-line">
+        Founded by <strong>Chia-Ho Tang</strong> · 唐加和
       </div>
       <div class="cta">
-        <a class="btn primary" href="/hoyao/">Explore HOYAO Materials</a>
+        <a class="btn primary" href="/hoyao/">Explore Hoyao Materials</a>
         <a class="btn" href="mailto:hello@peacecapital.io">Contact</a>
       </div>
     </div>
@@ -172,9 +261,10 @@
           <h3>Chia-Ho Tang</h3>
           <p>
             唐加和<br>
-            Founder of Peace Capital
+            Founder, Peace Capital
           </p>
         </div>
+
         <div class="card">
           <h3>Based in Taiwan</h3>
           <p>
@@ -191,8 +281,8 @@
         <div class="card">
           <h3>Peace Capital</h3>
           <p>
-            An independent platform focused on long-term partnerships,
-            industry research, and platform building across selected sectors.
+            A long-term platform built around partnerships, research orientation,
+            and strategic development.
           </p>
           <div class="mini-links">
             <span class="pill">Independent Platform</span>
@@ -202,35 +292,37 @@
         </div>
 
         <div class="card">
-          <h3>HOYAO Materials</h3>
-          <p>
-            A focused materials brand exploring advanced natural fiber materials,
-            fire safety, and sustainable construction applications.
-          </p>
-          <div class="mini-links">
-            <a class="pill" href="/hoyao/">Enter Site</a>
-            <a class="pill" href="/hoyao/zh/">中文</a>
-            <a class="pill" href="/hoyao/en/">English</a>
-          </div>
-        </div>
-      </div>
-    </div>
+  <h3>Hoyao Materials</h3>
+  <p>
+    <span class="subname">和曜建材</span>
+    A focused materials brand exploring advanced material applications,
+    fire safety, and sustainable construction directions.
+  </p>
+  <div class="mini-links">
+    <a class="pill" href="/hoyao/">Enter Site</a>
+    <a class="pill" href="/hoyao/zh/">中文</a>
+    <a class="pill" href="/hoyao/en/">English</a>
+  </div>
+</div>
+        <div class="card">
+  <h3>Harmony Culture</h3>
+  <p>
+    <span class="subname">和聲文化</span>
+    A cultural and creative platform exploring music, arts,
+    and long-term creative initiatives.
+  </p>
+  <div class="mini-links">
+    <span class="pill">Culture</span>
+    <span class="pill">Music</span>
+    <span class="pill">Creative Projects</span>
+  </div>
+</div>
 
-    <div class="section" id="focus">
-      <div class="section-title">Focus</div>
-      <div class="grid">
         <div class="card">
-          <h3>Strategic Development</h3>
+          <h3>Focus</h3>
           <p>
-            Building a platform around long-term direction, selected opportunities,
-            and thoughtful brand development.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Industry Themes</h3>
-          <p>
-            Including advanced materials, sustainability, and other long-term
-            industrial and strategic themes.
+            Including strategic development, industry themes, advanced materials,
+            sustainability, and selected long-term directions.
           </p>
         </div>
       </div>
@@ -238,7 +330,10 @@
 
     <div class="footer">
       <div>© 2026 Peace Capital</div>
-      <div>peacecapital.io</div>
+      <div>
+        peacecapital.io ·
+        <a href="https://www.linkedin.com/in/tangchiaho">LinkedIn</a>
+      </div>
     </div>
   </div>
 </body>
