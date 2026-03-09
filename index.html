@@ -1,342 +1,615 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Peace Capital｜和平資本</title>
-  <meta name="description" content="Peace Capital（和平資本）is an independent capital platform based in Taiwan, founded by Chia-Ho Tang（唐加和）." />
-  <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="Peace Capital｜和平資本" />
-  <meta property="og:description" content="An independent capital platform based in Taiwan, founded by Chia-Ho Tang（唐加和）." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Peace Capital | 和平資本</title>
+  <meta name="description" content="Peace Capital（和平資本）是一個專注於長期資本與產業觀察的獨立平台，關注具有長期潛力的企業與新興產業。" />
+  <meta name="keywords" content="Peace Capital, 和平資本, 長期資本, 策略投資, 投資平台, private equity, capital platform, Taiwan capital platform" />
+  <meta name="theme-color" content="#f7f6f2" />
+
+  <meta property="og:title" content="Peace Capital | 和平資本" />
+  <meta property="og:description" content="Long-term capital. Independent thinking." />
   <meta property="og:type" content="website" />
-  <link rel="canonical" href="https://peacecapital.io/" />
+  <meta property="og:url" content="https://peacecapital.io/" />
+  <meta property="og:image" content="https://peacecapital.io/assets/img/og-image.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Peace Capital | 和平資本" />
+  <meta name="twitter:description" content="Long-term capital. Independent thinking." />
+  <meta name="twitter:image" content="https://peacecapital.io/assets/img/og-image.jpg" />
+
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <style>
-    :root{
-      --bg:#071019;
-      --card:#0f1b2b;
-      --line:#1e2a3b;
-      --text:#edf3f8;
-      --muted:#9fb0c3;
-      --accent:#7fd0b2;
-      --accent2:#d2b56d;
-      --radius:22px;
+    :root {
+      --bg: #f7f6f2;
+      --surface: rgba(255,255,255,0.72);
+      --surface-strong: rgba(255,255,255,0.92);
+      --text: #171717;
+      --muted: #5f5f5a;
+      --line: rgba(23,23,23,0.10);
+      --line-strong: rgba(23,23,23,0.16);
+      --max: 1160px;
+      --radius: 24px;
+      --shadow: 0 20px 60px rgba(0,0,0,0.05);
     }
 
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-
-    body{
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(1200px 500px at 10% 0%, rgba(127,208,178,.10), transparent 60%),
-        radial-gradient(1000px 480px at 90% 10%, rgba(210,181,109,.10), transparent 60%),
-        linear-gradient(180deg, #071019, #050b12 100%);
-      line-height:1.68;
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.95), transparent 32%), var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    a{text-decoration:none;color:inherit}
+    a { color: inherit; text-decoration: none; }
+    strong { font-weight: 600; }
 
-    .wrap{
-      max-width:1180px;
-      margin:0 auto;
-      padding:28px 20px 80px;
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(14px);
+      background: rgba(247,246,242,0.80);
+      border-bottom: 1px solid rgba(23,23,23,0.06);
     }
 
-    .nav{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      padding:16px 20px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:rgba(10,17,28,.7);
-      backdrop-filter:blur(10px);
+    .topbar-inner,
+    .section,
+    .hero-inner,
+    .footer-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
     }
 
-    .brand-title{
-      font-size:28px;
-      font-weight:800;
-      letter-spacing:-.5px;
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 24px;
     }
 
-    .brand-sub{
-      font-size:13px;
-      color:var(--muted);
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
 
-    .nav-links{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      flex-wrap:wrap;
+    .brand-en {
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
 
-    .nav-links a{
-      font-size:14px;
-      color:var(--muted);
+    .brand-zh {
+      font-size: 0.92rem;
+      color: var(--text);
     }
 
-    .hero{
-      padding:72px 4px 36px;
+    .nav {
+      display: flex;
+      gap: 26px;
+      font-size: 0.94rem;
+      color: var(--muted);
     }
 
-    .eyebrow{
-      font-size:13px;
-      font-weight:700;
-      color:var(--accent);
-      letter-spacing:.4px;
+    .nav a:hover { color: var(--text); }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 0 64px;
     }
 
-    h1{
-      margin:14px 0 12px;
-      font-size:64px;
-      line-height:1.02;
-      letter-spacing:-1.8px;
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 56px;
+      align-items: end;
     }
 
-    .hero-sub{
-      font-size:18px;
-      color:var(--muted);
-      margin-bottom:18px;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface-strong);
+      color: var(--muted);
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
     }
 
-    .lead{
-      max-width:860px;
-      font-size:21px;
-      color:var(--muted);
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      font-weight: 560;
+      margin-bottom: 18px;
     }
 
-    .founder-line{
-      margin-top:18px;
-      color:var(--muted);
-      font-size:15px;
+    .hero-subtitle {
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      line-height: 1.3;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 26px;
+      max-width: 620px;
     }
 
-    .cta{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-top:26px;
+    .hero-copy {
+      max-width: 670px;
+      font-size: 1.02rem;
+      color: var(--muted);
     }
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:14px 20px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-      font-weight:600;
+    .hero-card {
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 32px;
+      box-shadow: var(--shadow);
     }
 
-    .btn.primary{
-      background:linear-gradient(135deg, rgba(127,208,178,.16), rgba(210,181,109,.12));
-      border-color:rgba(127,208,178,.25);
+    .hero-card-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 18px;
     }
 
-    .section{
-      margin-top:36px;
+    .hero-quote {
+      font-size: 1.3rem;
+      line-height: 1.45;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
     }
 
-    .section-title{
-      font-size:14px;
-      font-weight:700;
-      letter-spacing:.4px;
-      color:var(--muted);
-      text-transform:uppercase;
-      margin-bottom:14px;
+    .hero-lines {
+      display: grid;
+      gap: 12px;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(12,1fr);
-      gap:16px;
+    .hero-line {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(23,23,23,0.03);
+      border: 1px solid rgba(23,23,23,0.05);
+      color: var(--muted);
+      font-size: 0.96rem;
     }
 
-    .card{
-      grid-column:span 6;
-      padding:22px;
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:rgba(15,27,43,.62);
+    .section {
+      padding: 96px 0;
+      border-top: 1px solid rgba(23,23,23,0.06);
     }
 
-    .card h3{
-      margin:0 0 8px;
-      font-size:24px;
-      letter-spacing:-.3px;
+    .section-header {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 36px;
+      margin-bottom: 36px;
+      align-items: end;
     }
 
-    .card p{
-      margin:0;
-      color:var(--muted);
-      font-size:15px;
+    .section-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
     }
 
-    .mini-links{
-      margin-top:16px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
+    .section-title {
+      font-size: clamp(1.9rem, 4vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      font-weight: 560;
     }
 
-    .pill{
-      display:inline-flex;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      color:var(--muted);
-      font-size:13px;
+    .section-intro {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 700px;
     }
 
-    .footer{
-      margin-top:60px;
-      padding-top:18px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:13px;
-      display:flex;
-      justify-content:space-between;
-      gap:14px;
-      flex-wrap:wrap;
+    .about-box,
+    .vision-box,
+    .focus-box,
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.03);
     }
 
-    .footer a{
-      color:var(--muted);
+    .vision-quote,
+    .signature {
+      font-size: clamp(1.4rem, 2.4vw, 2rem);
+      line-height: 1.35;
+      letter-spacing: -0.03em;
+      margin-bottom: 18px;
     }
 
-    @media (max-width:900px){
-      h1{font-size:44px}
-      .lead{font-size:18px}
-      .card{grid-column:span 12}
-      .nav{
-        border-radius:24px;
-        align-items:flex-start;
-        flex-direction:column;
+    .muted { color: var(--muted); }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .philosophy-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      min-height: 250px;
+    }
+
+    .philosophy-card h3 {
+      font-size: 1.18rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      font-weight: 560;
+    }
+
+    .philosophy-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 22px;
+    }
+
+    .focus-list,
+    .industry-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .focus-item,
+    .industry-item {
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.52);
+      font-size: 0.97rem;
+    }
+
+    .industry-item strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 3px;
+      font-weight: 550;
+      color: var(--text);
+    }
+
+    .industry-item span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 26px;
+    }
+
+    .contact-meta {
+      display: grid;
+      gap: 18px;
+    }
+
+    .contact-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .contact-value {
+      font-size: 1rem;
+      color: var(--text);
+      word-break: break-word;
+    }
+
+    .footer {
+      padding: 54px 0 80px;
+      border-top: 1px solid rgba(23,23,23,0.06);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      align-items: flex-start;
+    }
+
+    .footer-signature {
+      font-size: clamp(1.35rem, 2vw, 1.9rem);
+      line-height: 1.35;
+      letter-spacing: -0.03em;
+    }
+
+    .footer-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner,
+      .section-header,
+      .focus-grid,
+      .contact-box,
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 72px;
+      }
+
+      .nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner,
+      .section,
+      .hero-inner,
+      .footer-inner {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .hero-card,
+      .vision-box,
+      .about-box,
+      .focus-box,
+      .contact-box,
+      .philosophy-card {
+        padding: 24px;
+        border-radius: 22px;
+      }
+
+      .section {
+        padding: 76px 0;
       }
     }
   </style>
 </head>
-
 <body>
-  <div class="wrap">
-    <div class="nav">
-      <div>
-        <div class="brand-title">Peace Capital</div>
-        <div class="brand-sub">和平資本</div>
-      </div>
-      <div class="nav-links">
-        <a href="/hoyao/">HOYAO</a>
-        <a href="/#founder">Founder</a>
-        <a href="/#platform">Platform</a>
-      </div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#home" aria-label="Peace Capital 首頁">
+        <span class="brand-en">Peace Capital</span>
+        <span class="brand-zh">和平資本</span>
+      </a>
+      <nav class="nav" aria-label="主選單">
+        <a href="#about">About</a>
+        <a href="#vision">Vision</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#focus">Focus</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="hero">
-      <div class="eyebrow">CAPITAL PLATFORM</div>
-      <h1>Peace Capital</h1>
-      <div class="hero-sub">和平資本</div>
-      <div class="lead">
-        Peace Capital is an independent platform based in Taiwan, built around
-        long-term partnerships, industry research, and strategic development.
-      </div>
-      <div class="founder-line">
-        Founded by <strong>Chia-Ho Tang</strong> · 唐加和
-      </div>
-      <div class="cta">
-        <a class="btn primary" href="/hoyao/">Explore Hoyao Materials</a>
-        <a class="btn" href="mailto:hello@peacecapital.io">Contact</a>
-      </div>
-    </div>
-
-    <div class="section" id="founder">
-      <div class="section-title">Founder</div>
-      <div class="grid">
-        <div class="card">
-          <h3>Chia-Ho Tang</h3>
-          <p>
-            唐加和<br>
-            Founder, Peace Capital
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Independent Capital Platform</div>
+          <h1>Peace Capital</h1>
+          <p class="hero-subtitle"><strong>Long-term capital.</strong><br><strong>Independent thinking.</strong></p>
+          <p class="hero-copy">
+            和平資本（Peace Capital）是一個專注於長期資本與產業觀察的獨立平台。<br>
+            我們持續關注具有長期潛力的企業與新興產業，並透過研究、交流與資本參與，探索企業與資本之間的長期合作關係。
           </p>
         </div>
-
-        <div class="card">
-          <h3>Based in Taiwan</h3>
-          <p>
-            Peace Capital serves as a quiet and long-term platform for brand identity,
-            research orientation, and strategic development.
-          </p>
-        </div>
+        <aside class="hero-card" aria-label="Peace Capital signature lines">
+          <div class="hero-card-label">Signature</div>
+          <div class="hero-quote">Peace in judgment.<br>Conviction in capital.</div>
+          <div class="hero-lines">
+            <div class="hero-line">Capital that thinks beyond the cycle.</div>
+            <div class="hero-line">Great partnerships are built over time.</div>
+          </div>
+        </aside>
       </div>
-    </div>
+    </section>
 
-    <div class="section" id="platform">
-      <div class="section-title">Platform</div>
-      <div class="grid">
-        <div class="card">
-          <h3>Peace Capital</h3>
-          <p>
-            A long-term platform built around partnerships, research orientation,
-            and strategic development.
-          </p>
-          <div class="mini-links">
-            <span class="pill">Independent Platform</span>
-            <span class="pill">Research</span>
-            <span class="pill">Long-Term Perspective</span>
+    <section class="section" id="about">
+      <div class="section-header">
+        <div>
+          <div class="section-label">About</div>
+          <h2 class="section-title">A platform built on patience, judgment, and long-term perspective.</h2>
+        </div>
+        <p class="section-intro">
+          Peace Capital（和平資本）專注於企業與產業的長期觀察，重視價值形成的過程，也重視資本與企業之間是否具備長期同行的可能。
+        </p>
+      </div>
+      <div class="about-box">
+        <p class="muted">
+          我們相信，真正重要的投資機會，往往不是來自短期情緒，而是來自對企業、產業與市場結構的持續理解。
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="vision">
+      <div class="section-header">
+        <div>
+          <div class="section-label">Vision</div>
+          <h2 class="section-title">Capital that thinks beyond the cycle.</h2>
+        </div>
+        <p class="section-intro">
+          資本市場的週期不斷變化，但真正具有價值的企業，往往能跨越市場波動持續成長。和平資本相信，長期視角、紀律與耐心，是投資最重要的基礎。
+        </p>
+      </div>
+      <div class="vision-box">
+        <div class="vision-quote">Peace in judgment. Conviction in capital.</div>
+        <p class="muted">這不只是品牌語言，也代表我們對資本配置與投資判斷的基本態度。</p>
+      </div>
+    </section>
+
+    <section class="section" id="philosophy">
+      <div class="section-header">
+        <div>
+          <div class="section-label">Investment Philosophy</div>
+          <h2 class="section-title">Understanding precedes investing.</h2>
+        </div>
+        <p class="section-intro">
+          投資不只是決策本身，更在於決策之前，是否已經看見一家企業真正重要的部分。
+        </p>
+      </div>
+      <div class="philosophy-grid">
+        <article class="philosophy-card">
+          <h3>Understanding precedes investing</h3>
+          <p>在參與企業之前，我們更重視長時間的觀察與理解。理解企業的經營者、產業位置與發展方向，往往比任何短期機會更重要。</p>
+        </article>
+        <article class="philosophy-card">
+          <h3>Conviction over volume</h3>
+          <p>投資的價值不在於做出大量決策，而在於在少數真正重要的機會上形成清晰而堅定的判斷。</p>
+        </article>
+        <article class="philosophy-card">
+          <h3>Long-term alignment</h3>
+          <p>當企業與資本擁有相同的長期視角時，投資才能真正成為企業發展的一部分，也更有可能建立穩定而長久的合作關係。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="whatwedo">
+      <div class="section-header">
+        <div>
+          <div class="section-label">What We Do</div>
+          <h2 class="section-title">Long-term observation across companies, industries, and capital markets.</h2>
+        </div>
+        <p class="section-intro">
+          和平資本專注於企業與產業的長期觀察。透過企業交流、產業研究與市場觀察，我們持續理解企業在產業中的位置與潛力。在理念一致的情況下，和平資本也會以策略投資人的身份參與企業。
+        </p>
+      </div>
+      <div class="about-box">
+        <div class="signature">Great partnerships are built over time.</div>
+        <p class="muted">真正重要的合作，往往不是開始得快，而是建立得久。</p>
+      </div>
+    </section>
+
+    <section class="section" id="focus">
+      <div class="section-header">
+        <div>
+          <div class="section-label">Investment Focus</div>
+          <h2 class="section-title">What we pay attention to matters as much as where we invest.</h2>
+        </div>
+        <p class="section-intro">
+          Peace Capital（和平資本）關注具有長期價值的企業與產業，也重視企業本身是否具備可延展的商業品質、成長潛力與長期競爭力。
+        </p>
+      </div>
+      <div class="focus-grid">
+        <div class="focus-box">
+          <div class="section-label">Key Considerations</div>
+          <div class="focus-list">
+            <div class="focus-item">穩定且具延展性的商業模式</div>
+            <div class="focus-item">長期成長與獲利能力</div>
+            <div class="focus-item">清晰的產業定位與競爭優勢</div>
+            <div class="focus-item">對社會與環境具正面影響的發展方向（ESG）</div>
           </div>
         </div>
-
-        <div class="card">
-  <h3>Hoyao Materials</h3>
-  <p>
-    <span class="subname">和曜建材</span>
-    A focused materials brand exploring advanced material applications,
-    fire safety, and sustainable construction directions.
-  </p>
-  <div class="mini-links">
-    <a class="pill" href="/hoyao/">Enter Site</a>
-    <a class="pill" href="/hoyao/zh/">中文</a>
-    <a class="pill" href="/hoyao/en/">English</a>
-  </div>
-</div>
-        <div class="card">
-  <h3>Harmony Culture</h3>
-  <p>
-    <span class="subname">和聲文化</span>
-    A cultural and creative platform exploring music, arts,
-    and long-term creative initiatives.
-  </p>
-  <div class="mini-links">
-    <span class="pill">Culture</span>
-    <span class="pill">Music</span>
-    <span class="pill">Creative Projects</span>
-  </div>
-</div>
-
-        <div class="card">
-          <h3>Focus</h3>
-          <p>
-            Including strategic development, industry themes, advanced materials,
-            sustainability, and selected long-term directions.
-          </p>
+        <div class="focus-box">
+          <div class="section-label">Areas of Focus</div>
+          <div class="industry-list">
+            <div class="industry-item">
+              <strong>Biotechnology &amp; Healthcare</strong>
+              <span>生技醫療</span>
+            </div>
+            <div class="industry-item">
+              <strong>Artificial Intelligence &amp; Software</strong>
+              <span>人工智慧與軟體應用</span>
+            </div>
+            <div class="industry-item">
+              <strong>Technology &amp; Digital Infrastructure</strong>
+              <span>科技與數位基礎建設</span>
+            </div>
+            <div class="industry-item">
+              <strong>Energy &amp; Sustainability</strong>
+              <span>能源與永續發展</span>
+            </div>
+            <div class="industry-item">
+              <strong>Advanced Materials</strong>
+              <span>新材料與產業創新</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="footer">
-      <div>© 2026 Peace Capital</div>
-      <div>
-        peacecapital.io ·
-        <a href="https://www.linkedin.com/in/tangchiaho">LinkedIn</a>
+      <div class="about-box" style="margin-top:22px;">
+        <p class="muted">市場會波動，但長期產業趨勢往往決定真正的機會。</p>
       </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-header">
+        <div>
+          <div class="section-label">Contact</div>
+          <h2 class="section-title">Peace Capital（和平資本）</h2>
+        </div>
+        <p class="section-intro">
+          For general communication and partnership inquiries.
+        </p>
+      </div>
+      <div class="contact-box">
+        <div class="contact-meta">
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value"><a href="mailto:contact@peacecapital.io">contact@peacecapital.io</a></div>
+          </div>
+          <div>
+            <div class="contact-label">Operational Entity</div>
+            <div class="contact-value">和玴投資有限公司<br>統一編號：95471352</div>
+          </div>
+        </div>
+        <div class="contact-meta">
+          <div>
+            <div class="contact-label">Address</div>
+            <div class="contact-value">20F-2, No.236, Shizheng North 2nd Road<br>Xitun District, Taichung City<br>Taiwan</div>
+          </div>
+          <div>
+            <div class="contact-label">Representative</div>
+            <div class="contact-value">唐加和</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-signature">Peace in judgment.<br>Conviction in capital.</div>
+      <div class="footer-note">Peace Capital is an independent capital platform focused on long-term perspective, disciplined thinking, and enduring partnerships.</div>
     </div>
-  </div>
+  </footer>
 </body>
 </html>
-
-<!-- rebuild 4 -->
