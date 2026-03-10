@@ -106,34 +106,13 @@ img {
   flex-shrink: 0;
 }
 
-.brand-textline {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 0;
-  line-height: 1;
-}
-
 .brand-en {
   font-size: 0.92rem;
   font-weight: 600;
   letter-spacing: 0.01em;
   color: var(--text);
   text-transform: none;
-}
-
-.brand-divider {
-  font-size: 0.82rem;
   line-height: 1;
-  opacity: 0.35;
-  color: var(--muted);
-}
-
-.brand-zh {
-  font-size: 0.92rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--muted);
 }
 
 .nav {
@@ -171,7 +150,7 @@ img {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 480px);
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 520px);
   gap: 72px;
   align-items: center;
 }
@@ -184,6 +163,13 @@ img {
   font-size: 0.8rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.hero-name-zh {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
   color: var(--muted);
   margin-bottom: 24px;
 }
@@ -206,13 +192,15 @@ img {
 
 .hero-panel {
   width: 100%;
+  max-width: 540px;
+  margin-left: auto;
 }
 
 .hero-panel img {
   width: 100%;
-  border-radius: 24px;
-  opacity: 0.94;
-  box-shadow: 0 20px 60px rgba(23, 23, 23, 0.04);
+  opacity: 0.92;
+  transform: scale(1.02);
+  transform-origin: center;
 }
 
 /* ===================== */
@@ -361,6 +349,7 @@ img {
   font-size: 0.94rem;
   letter-spacing: 0.04em;
   margin-top: 4px;
+  color: var(--muted);
 }
 
 .footer-title {
@@ -470,41 +459,30 @@ img {
 
   .brand-lockup {
     gap: 10px;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .brand-symbol {
     width: 16px;
     height: 16px;
-    margin-top: 1px;
-  }
-
-  .brand-textline {
-    gap: 8px;
-    flex-wrap: wrap;
   }
 
   .brand-en {
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     letter-spacing: 0.01em;
   }
 
-  .brand-divider {
-    display: none;
-  }
-
-  .brand-zh {
-    font-size: 0.82rem;
-    letter-spacing: 0.04em;
-  }
-
   .nav {
-    gap: 16px;
+    gap: 12px;
     justify-content: flex-end;
+    flex-wrap: wrap;
+    row-gap: 6px;
+    max-width: 180px;
   }
 
   .nav a {
-    font-size: 0.88rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
   }
 
   .hero {
@@ -515,6 +493,11 @@ img {
   .section-label {
     font-size: 0.74rem;
     letter-spacing: 0.18em;
+  }
+
+  .hero-name-zh {
+    font-size: 0.9rem;
+    margin-bottom: 16px;
   }
 
   .hero-title {
