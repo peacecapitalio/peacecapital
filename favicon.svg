@@ -1,9 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-
-<rect width="512" height="512" fill="none"/>
-
-<g transform="translate(60,40) scale(0.42)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512"><rect width="512" height="512" fill="none"></rect><g transform="translate(60,40) scale(0.42)">
   <path fill="#1C2F4A" d="
     M201 90
     L320 90
@@ -12,7 +7,7 @@
     C518 440,470 478,427 542
     C404 575,387 611,371 651
     L201 651
-    Z"/>
+    Z"></path>
 
   <path fill="#1C2F4A" d="
     M824 822
@@ -23,14 +18,12 @@
     C575 480,612 458,652 440
     C696 425,744 418,794 417
     C814 479,824 535,824 822
-    Z"/>
+    Z"></path>
 
   <path fill="#1C2F4A" d="
     M202 711
     L363 711
     L363 822
     L202 822
-    Z"/>
-</g>
-
-</svg>
+    Z"></path>
+</g></svg>
