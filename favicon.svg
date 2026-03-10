@@ -1,13 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="10" fill="#F7F6F2"/>
+  <rect width="64" height="64" rx="12" fill="#F7F6F2"/>
 
-  <!-- Peace Capital icon -->
-  <path d="M16 40
-           A20 20 0 0 1 40 16
-           L40 24
-           A14 14 0 0 0 24 40
-           Z"
-        fill="#2F3A4A"/>
-
-  <rect x="16" y="40" width="10" height="6" fill="#2F3A4A"/>
+  <g fill="#2F3A4A">
+    <path d="M16 44 A20 20 0 0 1 44 16 L44 24 A14 14 0 0 0 24 44 Z"/>
+    <rect x="16" y="44" width="12" height="6"/>
+    <path d="M16 16 L44 16 L16 44 Z"/>
+  </g>
 </svg>
