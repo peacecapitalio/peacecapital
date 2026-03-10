@@ -1,7 +1,3 @@
-<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-  <g fill="#1C2F4A">
-    <path d="M64 64 L256 64 A192 192 0 0 1 448 256 L256 256 L64 256 Z"/>
-    <path d="M256 256 L448 256 L448 448 L256 448 Z"/>
-    <rect x="64" y="320" width="128" height="128"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<use href="#symbol"/>
 </svg>
