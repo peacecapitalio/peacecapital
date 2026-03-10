@@ -88,32 +88,51 @@ img {
 }
 
 .brand {
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-lockup {
   display: inline-flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 12px;
+  min-width: 0;
   flex-shrink: 0;
+}
+
+.brand-symbol {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.brand-textline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
   line-height: 1;
 }
 
 .brand-en {
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   color: var(--text);
+  text-transform: none;
 }
 
 .brand-divider {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   line-height: 1;
-  opacity: 0.4;
+  opacity: 0.35;
   color: var(--muted);
 }
 
 .brand-zh {
   font-size: 0.92rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   color: var(--muted);
 }
 
@@ -146,12 +165,19 @@ img {
   padding: 92px 0 88px;
 }
 
-.hero-single {
-  max-width: 900px;
+.hero-split .container {
+  max-width: 1200px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 480px);
+  gap: 72px;
+  align-items: center;
 }
 
 .hero-copy-block {
-  max-width: 760px;
+  max-width: 680px;
 }
 
 .hero-label {
@@ -163,7 +189,7 @@ img {
 }
 
 .hero-title {
-  max-width: 760px;
+  max-width: 680px;
   font-size: var(--hero-title);
   line-height: 0.95;
   letter-spacing: -0.055em;
@@ -172,10 +198,21 @@ img {
 
 .hero-description {
   margin-top: 46px;
-  max-width: 540px;
+  max-width: 500px;
   font-size: 1.06rem;
   line-height: 1.85;
   color: var(--muted);
+}
+
+.hero-panel {
+  width: 100%;
+}
+
+.hero-panel img {
+  width: 100%;
+  border-radius: 24px;
+  opacity: 0.94;
+  box-shadow: 0 20px 60px rgba(23, 23, 23, 0.04);
 }
 
 /* ===================== */
@@ -315,10 +352,14 @@ img {
 
 .footer-brand .brand-en {
   font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
 }
 
 .footer-brand .brand-zh {
   font-size: 0.94rem;
+  letter-spacing: 0.04em;
   margin-top: 4px;
 }
 
@@ -354,6 +395,19 @@ img {
 /* ===================== */
 
 @media (max-width: 1080px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-copy-block {
+    max-width: 760px;
+  }
+
+  .hero-panel {
+    display: none;
+  }
+
   .approach-grid {
     grid-template-columns: 1fr;
     gap: 34px;
@@ -414,14 +468,25 @@ img {
     padding-bottom: 14px;
   }
 
-  .brand {
-    gap: 0.45rem;
+  .brand-lockup {
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .brand-symbol {
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
+  }
+
+  .brand-textline {
+    gap: 8px;
     flex-wrap: wrap;
   }
 
   .brand-en {
-    font-size: 0.74rem;
-    letter-spacing: 0.14em;
+    font-size: 0.78rem;
+    letter-spacing: 0.01em;
   }
 
   .brand-divider {
@@ -429,8 +494,8 @@ img {
   }
 
   .brand-zh {
-    font-size: 0.84rem;
-    letter-spacing: 0.06em;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
   }
 
   .nav {
